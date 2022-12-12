@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class CustomSafeArea extends StatelessWidget {
   const CustomSafeArea({
@@ -9,11 +10,10 @@ class CustomSafeArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: SafeArea(
-        child: child,
-      ),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      // value: SystemUiOverlayStyle.light,
+      value: SystemUiOverlayStyle.dark,
+      child: child,
     );
   }
 }

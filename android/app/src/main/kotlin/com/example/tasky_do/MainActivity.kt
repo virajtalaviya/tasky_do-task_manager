@@ -1,4 +1,4 @@
-package com.example.tasky_do
+package com.app.taskydo
 
 import io.flutter.embedding.android.FlutterActivity
 
