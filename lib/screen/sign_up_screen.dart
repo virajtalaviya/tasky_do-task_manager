@@ -162,7 +162,8 @@ class SignUpScreen extends StatelessWidget {
                       Expanded(
                         child: InkWell(
                           onTap: () {
-                            signUpController.getUserInfo();
+                            signUpController.signUpWithGoogle();
+                            // signUpController.getUserInfo();
                           },
                           child: Container(
                             height: 44,
@@ -194,7 +195,7 @@ class SignUpScreen extends StatelessWidget {
                       ),
                       TextButton(
                         onPressed: () {
-                          Get.to(() => const SignInScreen());
+                          Get.to(() => SignInScreen());
                         },
                         child: const Text(
                           "SIGN IN",

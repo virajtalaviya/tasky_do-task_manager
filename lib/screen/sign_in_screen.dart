@@ -3,11 +3,12 @@ import 'package:get/get.dart';
 import 'package:tasky_do/components/custom_safe_area.dart';
 import 'package:tasky_do/constants/color_const.dart';
 import 'package:tasky_do/constants/font_family.dart';
+import 'package:tasky_do/controller/sign_in_controller.dart';
 import 'package:tasky_do/screen/home_screen.dart';
 
 class SignInScreen extends StatelessWidget {
-  const SignInScreen({Key? key}) : super(key: key);
-
+  SignInScreen({Key? key}) : super(key: key);
+  final SignInController signInController = Get.put(SignInController());
 
   @override
   Widget build(BuildContext context) {
