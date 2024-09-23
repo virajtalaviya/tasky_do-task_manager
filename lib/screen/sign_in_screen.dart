@@ -57,7 +57,9 @@ class SignInScreen extends StatelessWidget {
                       borderSide: BorderSide(color: Color(0xff7D7D7D)),
                     ),
                     focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: ColorConst.primaryColor,),
+                      borderSide: BorderSide(
+                        color: ColorConst.primaryColor,
+                      ),
                     ),
                   ),
                 ),
@@ -70,7 +72,9 @@ class SignInScreen extends StatelessWidget {
                       borderSide: BorderSide(color: Color(0xff7D7D7D)),
                     ),
                     focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: ColorConst.primaryColor,),
+                      borderSide: BorderSide(
+                        color: ColorConst.primaryColor,
+                      ),
                     ),
                   ),
                 ),
@@ -120,31 +124,44 @@ class SignInScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 18),
-                Row(
-                  children: [
-                    InkWell(
-                      onTap: (){},
-                      child: Expanded(
-                        child: Container(
-                          height: 44,
-                          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(6)),
-                          child: Image.asset("asset/Google.png"),
-                        ),
-                      ),
-                    ),
-                    const SizedBox(width: 13),
-                    InkWell(
-                      onTap: (){},
-                      child: Expanded(
-                        child: Container(
-                          height: 44,
-                          decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(6)),
-                          child: Image.asset("asset/facebook.png"),
-                        ),
-                      ),
-                    ),
-                  ],
+                InkWell(
+                  onTap: () {
+                    signInController.googleSignIn();
+                  },
+                  child: Container(
+                    height: 44,
+                    decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(6)),
+                    child: Center(child: Image.asset("asset/Google.png")),
+                  ),
                 ),
+                // Row(
+                //   children: [
+                //     InkWell(
+                //       onTap: () {
+                //         signInController.googleSignIn();
+                //       },
+                //       child: Expanded(
+                //         child: Container(
+                //           height: 44,
+                //           decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(6)),
+                //           child: Image.asset("asset/Google.png"),
+                //         ),
+                //       ),
+                //     ),
+                //     const SizedBox(width: 13),
+                //     InkWell(
+                //       onTap: () {
+                //       },
+                //       child: Expanded(
+                //         child: Container(
+                //           height: 44,
+                //           decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(6)),
+                //           child: Image.asset("asset/facebook.png"),
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

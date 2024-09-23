@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:tasky_do/components/custom_safe_area.dart';
-import 'package:tasky_do/components/custom_snackbar.dart';
 import 'package:tasky_do/constants/font_family.dart';
 import 'package:tasky_do/controller/sign_up_controller.dart';
 import 'package:tasky_do/screen/sign_in_screen.dart';
@@ -128,7 +127,6 @@ class SignUpScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       signUpController.signUp();
-
                     },
                     style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(const Color(0xff1AAACD)),
@@ -156,35 +154,46 @@ class SignUpScreen extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 18),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {
-                            signUpController.signUpWithGoogle();
-                            // signUpController.getUserInfo();
-                          },
-                          child: Container(
-                            height: 44,
-                            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(6)),
-                            child: Center(child: Image.asset("asset/Google.png")),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 13),
-                      Expanded(
-                        child: InkWell(
-                          onTap: () {},
-                          child: Container(
-                            height: 44,
-                            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(6)),
-                            child: Center(child: Image.asset("asset/facebook.png")),
-                          ),
-                        ),
-                      ),
-                    ],
+                  InkWell(
+                    onTap: () {
+                      signUpController.signUpWithGoogle();
+                      // signUpController.getUserInfo();
+                    },
+                    child: Container(
+                      height: 44,
+                      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(6)),
+                      child: Center(child: Image.asset("asset/Google.png")),
+                    ),
                   ),
+                  // Row(
+                  //   mainAxisSize: MainAxisSize.max,
+                  //   children: [
+                  //     Expanded(
+                  //       child: InkWell(
+                  //         onTap: () {
+                  //           signUpController.signUpWithGoogle();
+                  //           // signUpController.getUserInfo();
+                  //         },
+                  //         child: Container(
+                  //           height: 44,
+                  //           decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(6)),
+                  //           child: Center(child: Image.asset("asset/Google.png")),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //     const SizedBox(width: 13),
+                  //     Expanded(
+                  //       child: InkWell(
+                  //         onTap: () {},
+                  //         child: Container(
+                  //           height: 44,
+                  //           decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(6)),
+                  //           child: Center(child: Image.asset("asset/facebook.png")),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                   const SizedBox(height: 31),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

@@ -4,8 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tasky_do/components/custom_snackbar.dart';
+import 'package:tasky_do/screen/home_screen.dart';
 
-class SignUpController {
+class SignUpController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
   FirebaseDatabase firebaseDatabase = FirebaseDatabase.instance;
 
@@ -60,10 +61,15 @@ class SignUpController {
       User? user = credential.user;
       if (user != null) {
         /// user signed in successfully with google
+        Get.to(() => const HomeScreen());
       }
     }
   }
 
-  void signUpWithFacebook() {}
-
+// void signUPWithFacebook() async {
+//   LoginResult loginResult = await FacebookAuth.instance.login(permissions: ["email"]);
+//   print("${loginResult.status}");
+//   print("${loginResult.message}");
+//   print("${loginResult.accessToken?.token}");
+// }
 }

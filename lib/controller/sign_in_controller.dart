@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:tasky_do/screen/home_screen.dart';
 
 class SignInController extends GetxController {
   FirebaseAuth auth = FirebaseAuth.instance;
@@ -18,7 +19,9 @@ class SignInController extends GetxController {
       User? user = credential.user;
       if (user != null) {
         /// user signed in successfully with google
+        Get.to(()=> const HomeScreen());
       }
     }
   }
+
 }
